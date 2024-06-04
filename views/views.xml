@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id='view_item_form' model="ir.ui.view">
+        <field name="name">item_item_form</field>
+        <field name="model">item.item</field>
+        <field name="arch" type="xml">
+            <field name="name"/>
+            <field name="helpdesk_team"/>
+            <field name="item_type"/>
+            <field name="item_category" />
+            <field name="item_tag_ids" />
+            
+          </field>
+
+
+          
+        </field>
+        
+    </record>
+    
+    <record id='view_item_tree' model="ir.ui.view">
+        <field name="name">item_item_tree</field>
+        <field name="model">item.item</field>
+        <field name="arch" type="xml">
+          <tree>
+            
+            <field name="name"/>
+            <field name="helpdesk_team"/>
+            <field name="item_type"/>
+            <field name="item_category " />
+            <field name="item_tag_ids " />
+            
+          </field>
+
+          </tree>
+
+          
+        </field>
+    </record>
+    
+    <record id="act_item_main" model="ir.actions.act_window">
+        <field name="name">Item</field>
+        <field name="res_model">item.item</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_item_tree"></field>
+
+    </record>
+    
+    <menuitem
+        id="submenu_items_root"
+        name="Configuracion de Items"
+        parent="helpdesk.menu_helpdesk_root"
+        sequence="10" />
+    <menuitem
+        id="submenu_items_type"
+        name="Tipo de item"
+        parent="submenu_items_root"
+        action="act_item_type"
+        sequence="10" />
+      
+    <menuitem
+        id="submenu_items_category"
+        name="Categoria de item"
+        parent="submenu_items_root"
+      action ="act_item_category"
+        sequence="10" />
+    <menuitem
+        id="submenu_items"
+        name="Items"
+        parent="submenu_items_root"
+      action ="act_item_main"
+        sequence="10" />
+    
+</odoo> 
