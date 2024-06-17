@@ -8,7 +8,8 @@ from datetime import datetime
 class Category_item(models.Model):
     _name = "item.category"
 
-    name = fields.Char("Descripcion")
+    name = fields.Char(string="Descripcion")
+    item_type = fields.Many2one("item.type",strin="Tipo de item")
     
 
     

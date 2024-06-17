@@ -8,7 +8,7 @@ from datetime import datetime
 class Type_item(models.Model):
     _name = "item.type"
 
-    name = fields.Char("Descripcion")
+    name = fields.Char(string="Descripcion")
     
 
     

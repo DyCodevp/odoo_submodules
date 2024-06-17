@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    This module copyright (C) 2018 Marlon Falcon Hernandez
+#    This module copyright (C) 2024 Dylan Chaves Potoy 
 ##############################################################################
 {
     'name': 'Help desk items',
@@ -20,6 +20,7 @@
               'views/item_category.xml',
               'views/item_tags.xml',
               'views/item_type.xml',
+              'views/ticket.xml',
         
             ],
     

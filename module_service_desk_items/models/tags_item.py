@@ -9,8 +9,9 @@ from datetime import datetime
 class Type_item(models.Model):
     _name = "item.tags"
 
-    name = fields.Char("Nombre")
-    color = fields.Integer("Color")
+    name = fields.Char(string="Nombre")
+    color = fields.Integer(string="Color")
+    item_category =  fields.Many2one("item.category",string="Categoria de Item")
     
 
     

@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="view_item_category_form" model="ir.ui.view">
@@ -7,12 +6,15 @@
         <field name="arch" type="xml">
             <form model="item.category" string="Item Category">
                 <sheet>
-                    <div style="width: 100%;">
-                        <h1 style="width: 100%;">
-                            <field name="name" />
-                            <field name="color" />
-                        </h1>
-                    </div>
+                  <group>
+                    <group>
+                      <h1>
+                          <field name="name" />
+                      </h1>
+                      
+                      <field name="item_type" />
+                    </group>
+                  </group>
                 </sheet>
             </form>
         </field>
@@ -20,11 +22,11 @@
 
     <record id="view_item_category_tree" model="ir.ui.view">
         <field name="name">item_category_tree</field>
-        <field name="model">item.type</field>
+        <field name="model">item.category</field>
         <field name="arch" type="xml">
             <tree >
                 <field name="name" />
-                <field name="color" />
+                <field name="item_type" />
             </tree>
         </field>
     </record>
@@ -33,7 +35,7 @@
         <field name="name">Item Category</field>
         <field name="res_model">item.category</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_item_category_tree"></field>
+        <field name="view_id" ref="view_item_category_tree"/>
 
     </record>
 
